@@ -23,5 +23,37 @@
 2. import the variable in another file > import signinwithpopup
 3. onclick call signinwithpopup function with auth,variable inside it
 
-## Database
+## Database(crud)
 
+- make firestore database in website
+- import getfirestore from firebase/firestore
+- put app in getfirestore and store in a variable(db) and export
+- import collection (the main data or reference), call the collection, store it in a variable(ref)
+- collection take two parameter which is variable and id
+- const collectionRef=collection(variable(db),id(product))
+
+### Read
+
+- to read the data we need **getDocs** import it
+- it will take **ref** as parameter store in a variable
+
+
+```
+  const data = await getDocs(prodCollectionRef);
+  const filteredData = data.docs.map((value) => ({...value.data(),id: value.id,
+  }));
+
+```
+
+### Create
+
+- to create the mean to send the data in database
+- use **addDoc** it will take two thing reference and data(variable) in form of object
+
+```
+await addDoc(prodCollectionRef, sendproduct);
+```
+
+### Update
+
+### Delete
