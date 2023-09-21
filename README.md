@@ -34,9 +34,9 @@
 
 ### Read
 
-- to read the data we need **getDocs** import it
-- it will take **ref** as parameter store in a variable
-
+- to read the data we need **getDocs** and  **Collection** import it form firebase/firestore
+- getdocs will take collection(store in variable) as parameter,and collection will take variable and id as parameter
+- const prodCollectionRef=
 
 ```
   const data = await getDocs(prodCollectionRef);
@@ -54,6 +54,15 @@
 await addDoc(prodCollectionRef, sendproduct);
 ```
 
-### Update
-
 ### Delete
+
+- import doc and deleteDoc
+- doc will take there thing db, main id("product),id and store it in a variable
+- put this variable in deleteDoc(variable)
+
+```
+const productDoc = doc(db, "product", id);
+await deleteDoc(productDoc);
+```
+
+### Update
